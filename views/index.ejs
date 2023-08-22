@@ -1,0 +1,25 @@
+<%- include("partials/head.ejs") %> 
+<%- include("partials/header.ejs") %>
+
+<div class="mt-8 mx-auto p-3 container border flex justify-center flex-col gap-4 w-min-[265px] max-w-[700px] bg-white rounded-md shadow-md">
+    <h1 class="text-2xl sm:text-4xl text-center">Guias perguntas</h1>
+    <button class="self-start active:scale-90 bg-blue-600 py-1 px-3 rounded-md flex justify-center items-center hover:bg-blue-400 text-slate-50 text-xs sm:text-sm">
+        <a href="/perguntar">Perguntar</a>
+    </button>
+    <hr />
+    <h3 class="pl-5 h-9 text-xl sm:text-2xl text-start">Lista de perguntas</h3>
+    <div class="px-4">
+        <% perguntas.forEach((pergunta) =>{ %>
+        <div class="mb-2 bg-slate-200 p-2 rounded-sm">
+            <p><%= pergunta.titulo %></p>
+        </div>
+        <button class="botao">
+            <a href="/responder/<%= pergunta.id %>">Responder</a>
+        </button>
+        <hr />
+        <br />
+        <% }); %>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

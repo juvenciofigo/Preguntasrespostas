@@ -1,0 +1,30 @@
+<%- include("partials/head.ejs") %> <%- include("partials/header.ejs") %>
+
+<div class="mt-8 mx-auto p-3 container border flex justify-center flex-col gap-1 w-min-[265px] max-w-[700px] bg-white rounded-md shadow-md">
+    <div class="">
+        <h2 class="text-2xl"><%= pergunta.titulo %></h2>
+        <p><%= pergunta.descricao %></p>
+    </div>
+    <hr />
+    <div class="areaResposta m-3">
+        <form action="/responder" method="post" class="flex gap-3 justify-center flex-col">
+            <label class="">
+                <p>Responder</p>
+                <textarea name="corpo" id="meuTextarea" rows="2" required class="areaTexto" placeholder="Descreva sua resposta aqui" autocomplete="off"></textarea>
+                <input type="hidden" name="idPergunta" value="<%= pergunta.id %>" />
+            </label>
+            <button type="submit" class="botao">Enviar</button>
+        </form>
+        <div class="mt-3">
+            <h2 class="text-xl">Respostas</h2>
+            <hr />
+            <div class="flex flex-col gap-3">
+                */<% respostas.forEach((resposta) =>{ %>
+                <p class="bg-slate-100 p-2 ring-1 rounded-sm"> <%= %><%= resposta.corpo %></p>
+                <%});%>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

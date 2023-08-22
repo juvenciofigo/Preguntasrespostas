@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .botao {
+        @apply self-start bg-blue-600 py-1 px-3 rounded-md flex justify-center items-center hover:bg-blue-400 text-slate-50 sm:text-sm scale-75 mb-1;
+    }
+    .areaTexto{
+        @apply overflow-hidden snap-none resize-none h-auto placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-1 pl-2 pr-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1
+    }
+}
